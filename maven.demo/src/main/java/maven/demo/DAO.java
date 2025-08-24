@@ -15,7 +15,7 @@ public class DAO {
 	public boolean conectar() {
 		String driverName = "org.postgresql.Driver";                    
 		String serverName = "localhost";
-		String mydatabase = "carro";
+		String mydatabase = "teste";
 		int porta = 5432;
 		String url = "jdbc:postgresql://" + serverName + ":" + porta +"/" + mydatabase;
 		String username = "ti2cc";
@@ -75,7 +75,7 @@ public class DAO {
 			Statement st = conexao.createStatement();
 			String sql = "UPDATE carro SET modelo = '" + carro.getModelo() + "', marca = '"  
 				       + carro.getMarca() + "', preco = '" + carro.getPreco() + "'"
-					   + " WHERE codigo = " + carro.getCodigo();
+					   + " WHERE cod = " + carro.getCodigo();
 			st.executeUpdate(sql);
 			st.close();
 			status = true;
@@ -90,7 +90,7 @@ public class DAO {
 		boolean status = false;
 		try {  
 			Statement st = conexao.createStatement();
-			st.executeUpdate("DELETE FROM carro WHERE codigo = " + cod);
+			st.executeUpdate("DELETE FROM carro WHERE cod = " + codigo);
 			st.close();
 			status = true;
 		} catch (SQLException u) {  
