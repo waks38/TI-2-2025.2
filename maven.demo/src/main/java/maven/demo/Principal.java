@@ -94,7 +94,7 @@ public class Principal {
             }
 
 		}
-		sc.close();
+		sc.close(); // desaloca o scanner
 		dao.close(); // Fecha a conexao com o banco
 	}
 		
